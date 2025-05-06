@@ -1,0 +1,36 @@
+<VSTemplate Version="2.0.0" Type="ProjectGroup"
+    xmlns="http://schemas.microsoft.com/developer/vstemplate/2005">
+    <TemplateData>
+        <Name>WpfApplicationTemplate</Name>
+        <Description>This template is WPF Application Template with generic host, messageSerivce, in memory logger etc.</Description>
+        <ProjectType>VisualBasic</ProjectType>
+    </TemplateData>
+    <TemplateContent>
+        <ProjectCollection>
+            <ProjectTemplateLink ProjectName="$safeprojectname$" CopyParameters="true">
+                WpfAppTemplate\MyTemplate.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.ITrace" CopyParameters="true">
+                WpfAppTemplate.ITrace\MyTemplate.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.IViewService" CopyParameters="true">
+                WpfAppTemplate.IViewService\MyTemplate.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.IWaitService" CopyParameters="true">
+                WpfAppTemplate.IWaitService\MyTemplate.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.Trace" CopyParameters="true">
+                WpfAppTemplate.Trace\MyTemplate.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.ViewModel" CopyParameters="true">
+                WpfAppTemplate.ViewModel\MyTemplate.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.ViewService" CopyParameters="true">
+                WpfAppTemplate.ViewService\MyTemplate.vstemplate
+            </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.WaitService" CopyParameters="true">
+                WpfAppTemplate.WaitService\MyTemplate.vstemplate
+            </ProjectTemplateLink>
+        </ProjectCollection>
+    </TemplateContent>
+</VSTemplate>

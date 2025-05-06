@@ -1,0 +1,58 @@
+﻿using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace $ext_safeprojectname$.Trace
+{
+    /// <summary>
+    /// インメモリロガー
+    /// </summary>
+    internal class InMemoryLogger : ILogger
+    {
+        /// <summary>
+        /// カテゴリ名
+        /// </summary>
+        private readonly string _name;
+        /// <summary>
+        /// インメモリログストア
+        /// </summary>
+        private readonly IInternalInMemoryLogStore _store;
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="name">カテゴリ名</param>
+        /// <param name="store">インメモリログストア</param>
+        public InMemoryLogger(string name, IInternalInMemoryLogStore store)
+        {
+            _name = name;
+            _store = store;
+        }
+        /// <inheritdoc/>
+        public IDisposable BeginScope<TState>(TState state)
+        {
+            return default;
+        }
+        /// <inheritdoc/>
+        public bool IsEnabled(LogLevel logLevel)
+        {
+            return logLevel != LogLevel.None;
+        }
+        /// <inheritdoc/>
+        public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
+        {
+            if (!IsEnabled(logLevel))
+            {
+                return;
+            }
+
+            string message = formatter(state, exception);
+
+            if (string.IsNullOrEmpty(message))
+            {
+                return;
+            }
+            _store.Push(new LogRecord(_name, logLevel, message));
+        }
+    }
+}

@@ -1,0 +1,32 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>WpfAppTemplate.IViewService</Name>
+    <Description>&lt;説明はありません。&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WpfAppTemplate.IViewService</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="WpfAppTemplate.IViewService.csproj" File="WpfAppTemplate.IViewService.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="IDirectoryDialog.cs">IDirectoryDialog.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="IErrorMessageService.cs">IErrorMessageService.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="IFolderBrowserDialogService.cs">IFolderBrowserDialogService.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="IInfomationMessageService.cs">IInfomationMessageService.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="IOpenFileDialog.cs">IOpenFileDialog.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="IOpenFileDialogService.cs">IOpenFileDialogService.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="IQuestionMessageService.cs">IQuestionMessageService.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="IWarningMessageService.cs">IWarningMessageService.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="MessageBoxResult.cs">MessageBoxResult.cs</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
