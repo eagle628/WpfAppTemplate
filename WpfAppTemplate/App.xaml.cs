@@ -10,6 +10,7 @@ using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 using R3;
 using $safeprojectname$.IMessageBroker;
+using $safeprojectname$.IScope;
 using $safeprojectname$.ITrace;
 using $safeprojectname$.IViewService;
 using $safeprojectname$.IWaitService;
@@ -61,6 +62,8 @@ namespace $safeprojectname$
                     .AddSingleton<IFolderBrowserDialogService, FormFolderBrowserDialogService>()
                     //WaitService
                     .AddSingleton<IWaitingDialogService, WaitingDialogService>()
+                    //ScopeManagement
+                    .UseScopeManagement()
                     //MessageBroker
                     .UseAsyncMessageBroker()
                     .UseMessageBroker();

@@ -95,6 +95,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\$ext_safeprojectname$.IScope\$ext_safeprojectname$.IScope.csproj">
+      <Project>{b6f0bfc1-8c6b-4684-b726-ccdf7cb20187}</Project>
+      <Name>$ext_safeprojectname$.IScope</Name>
+    </ProjectReference>
     <ProjectReference Include="..\$ext_safeprojectname$.IMessageBroker\$ext_safeprojectname$.IMessageBroker.csproj">
       <Project>{702b8506-4829-4977-aca7-22348ff453fe}</Project>
       <Name>$ext_safeprojectname$.IMessageBroker</Name>
