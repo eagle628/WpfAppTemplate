@@ -1,0 +1,31 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>WpfAppTemplate.IMessageBroker</Name>
+    <Description>&lt;説明はありません。&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>WpfApplicationTemplate.IMessageBroker</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="WpfAppTemplate.IMessageBroker.csproj" File="WpfAppTemplate.IMessageBroker.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="AsyncMessageBroker.cs">AsyncMessageBroker.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="AsyncSubscriberExtensions.cs">AsyncSubscriberExtensions.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="IAsyncMessageBroker.cs">IAsyncMessageBroker.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="IMessageBroker.cs">IMessageBroker.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="MessageBroker.cs">MessageBroker.cs</ProjectItem>
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="ServiceCollectionExtensions.cs">ServiceCollectionExtensions.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="SubscriberExtensions.cs">SubscriberExtensions.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Subscription.cs">Subscription.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

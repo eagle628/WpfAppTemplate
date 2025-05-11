@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 using R3;
+using $safeprojectname$.IMessageBroker;
 using $safeprojectname$.ITrace;
 using $safeprojectname$.IViewService;
 using $safeprojectname$.IWaitService;
@@ -59,7 +60,10 @@ namespace $safeprojectname$
                     .AddSingleton<IOpenFileDialogService, WpfOpenFileDialogService>()
                     .AddSingleton<IFolderBrowserDialogService, FormFolderBrowserDialogService>()
                     //WaitService
-                    .AddSingleton<IWaitingDialogService, WaitingDialogService>();
+                    .AddSingleton<IWaitingDialogService, WaitingDialogService>()
+                    //MessageBroker
+                    .UseAsyncMessageBroker()
+                    .UseMessageBroker();
         }
         private void ConfigureLoggingCore(HostBuilderContext context, ILoggingBuilder logging)
         {

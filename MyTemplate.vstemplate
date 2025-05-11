@@ -10,6 +10,9 @@
             <ProjectTemplateLink ProjectName="$safeprojectname$" CopyParameters="true">
                 WpfAppTemplate\MyTemplate.vstemplate
             </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.IMessageBroker" CopyParameters="true">
+                WpfAppTemplate.IMessageBroker\MyTemplate.vstemplate
+            </ProjectTemplateLink>
             <ProjectTemplateLink ProjectName="$safeprojectname$.ITrace" CopyParameters="true">
                 WpfAppTemplate.ITrace\MyTemplate.vstemplate
             </ProjectTemplateLink>
