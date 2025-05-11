@@ -1,24 +1,30 @@
-﻿using Microsoft.Extensions.Logging;
-using System;
-using $ext_safeprojectname$.ITrace;
+﻿using System;
 
-namespace $ext_safeprojectname$.Trace
+namespace $ext_safeprojectname$.ITrace
 {
     /// <summary>
     /// ログレコード構造体
     /// </summary>
     /// <remarks>速度を考慮して防御的コピーを避けるためReadOnly構造体を守ること。</remarks>
-    public readonly struct LogRecord : ILogRecord
+    public readonly struct LogRecord
     {
-        /// <inheritdoc cref="ILogRecord.CategoryName"/>
+        /// <summary>
+        /// カテゴリ名
+        /// </summary>
         public string CategoryName { get; }
-        /// <inheritdoc cref="ILogRecord.LogLevel"/>
+        /// <summary>
+        /// ログレベル
+        /// </summary>
 
-        public ITrace.LogLevel LogLevel { get; }
-        /// <inheritdoc cref="ILogRecord.Message"/>
+        public LogLevel LogLevel { get; }
+        /// <summary>
+        /// ログメッセージ
+        /// </summary>
 
         public string Message { get; }
-        /// <inheritdoc cref="ILogRecord.DateTime"/>
+        /// <summary>
+        /// ログ発生時刻
+        /// </summary>
 
         public DateTime DateTime { get; }
         /// <summary>

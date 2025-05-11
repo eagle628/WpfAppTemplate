@@ -1,11 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
-
-namespace $ext_safeprojectname$.Trace
+﻿namespace $ext_safeprojectname$.ITrace
 {
     /// <summary>
     /// インメモリログストアの設定
     /// </summary>
-    public sealed class InMemoryLogStoreConfig
+    internal sealed class InMemoryLogStoreConfig
     {
         /// <summary>
         /// インメモリログレコードの上限数
@@ -14,7 +12,7 @@ namespace $ext_safeprojectname$.Trace
         /// <summary>
         /// インメモリログストアに登録される最小ログレベル
         /// </summary>
-        public LogLevel MinLevel { get; set; } = LogLevel.Information;
+        public Microsoft.Extensions.Logging.LogLevel MinLevel { get; set; } = Microsoft.Extensions.Logging.LogLevel.Information;
         /// <summary>
         /// コンストラクタ
         /// </summary>

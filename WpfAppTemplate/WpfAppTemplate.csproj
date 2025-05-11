@@ -103,9 +103,9 @@
       <Project>{ecd66d48-be1a-44bc-96f8-80d7e26ff90b}</Project>
       <Name>$ext_safeprojectname$.IWaitService</Name>
     </ProjectReference>
-    <ProjectReference Include="..\$ext_safeprojectname$.Trace\$ext_safeprojectname$.Trace.csproj">
+    <ProjectReference Include="..\$ext_safeprojectname$.ITrace\$ext_safeprojectname$.ITrace.csproj">
       <Project>{44998116-f37c-4950-9e7f-fad78f40e4ca}</Project>
-      <Name>$ext_safeprojectname$.Trace</Name>
+      <Name>$ext_safeprojectname$.ITrace</Name>
     </ProjectReference>
     <ProjectReference Include="..\$ext_safeprojectname$.ViewModel\$ext_safeprojectname$.ViewModel.csproj">
       <Project>{e8547ce6-aed8-4b92-8f50-a2b8b8ab4429}</Project>

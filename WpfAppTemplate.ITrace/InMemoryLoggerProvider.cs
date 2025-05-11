@@ -2,12 +2,12 @@
 using System;
 using System.Collections.Concurrent;
 
-namespace $ext_safeprojectname$.Trace
+namespace $ext_safeprojectname$.ITrace
 {
     /// <summary>
     /// <see cref="InMemoryLogger"/>をLoggerに登録するためのクラス
     /// </summary>
-    public sealed class InMemoryLoggerProvider : ILoggerProvider
+    internal sealed class InMemoryLoggerProvider : ILoggerProvider
     {
         private readonly ConcurrentDictionary<string, InMemoryLogger> _loggers;
         private readonly IInternalInMemoryLogStore _store;

@@ -1,27 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
 using System.IO;
-using System.Linq;
-using System.Text.Json.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using System.Windows.Threading;
-using $safeprojectname$.View;
-using $safeprojectname$.ViewModel;
 using NLog.Extensions.Logging;
 using R3;
+using $safeprojectname$.ITrace;
 using $safeprojectname$.IViewService;
-using $safeprojectname$.ViewService;
-using $safeprojectname$.Trace;
 using $safeprojectname$.IWaitService;
+using $safeprojectname$.View;
+using $safeprojectname$.ViewModel;
+using $safeprojectname$.ViewService;
 using $safeprojectname$.WaitService.ViewModel;
+using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
 namespace $safeprojectname$
 {

@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace $ext_safeprojectname$.ITrace
 {
@@ -11,10 +15,10 @@ namespace $ext_safeprojectname$.ITrace
         /// <summary>
         /// インメモリに蓄積されたログ一覧
         /// </summary>
-        ILogRecord[] LogRecords { get; }
+        LogRecord[] LogRecords { get; }
         /// <summary>
         /// 最後にインメモリに蓄積されたログ
         /// </summary>
-        ILogRecord HeadLogRecord { get; }
+        LogRecord HeadLogRecord { get; }
     }
 }

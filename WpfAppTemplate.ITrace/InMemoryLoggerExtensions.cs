@@ -3,9 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Configuration;
-using $ext_safeprojectname$.ITrace;
 
-namespace $ext_safeprojectname$.Trace
+namespace $ext_safeprojectname$.ITrace
 {
     /// <summary>
     /// <see cref="IInMemoryLogStore"/>をDIに登録するための拡張メソッド

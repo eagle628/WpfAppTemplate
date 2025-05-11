@@ -24,7 +24,7 @@ namespace $ext_safeprojectname$.ViewModel
         public ReactiveCommand ShowWarningCommand { get; }
         public ReactiveCommand TaskWaitCommand { get; }
 
-        public IReadOnlyBindableReactiveProperty<ILogRecord[]> LogRecords { get; }
+        public IReadOnlyBindableReactiveProperty<LogRecord[]> LogRecords { get; }
         public MainWindowViewModel(
             ILogger<MainWindowViewModel> logger,
             IWarningMessageService warningMessageService,

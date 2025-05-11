@@ -1,9 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 
-namespace $ext_safeprojectname$.Trace
+namespace $ext_safeprojectname$.ITrace
 {
     /// <summary>
     /// インメモリロガー
@@ -34,12 +32,12 @@ namespace $ext_safeprojectname$.Trace
             return default;
         }
         /// <inheritdoc/>
-        public bool IsEnabled(LogLevel logLevel)
+        public bool IsEnabled(Microsoft.Extensions.Logging.LogLevel logLevel)
         {
-            return logLevel != LogLevel.None;
+            return logLevel != Microsoft.Extensions.Logging.LogLevel.None;
         }
         /// <inheritdoc/>
-        public void Log<TState>(LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
+        public void Log<TState>(Microsoft.Extensions.Logging.LogLevel logLevel, EventId eventId, TState state, Exception exception, Func<TState, Exception, string> formatter)
         {
             if (!IsEnabled(logLevel))
             {

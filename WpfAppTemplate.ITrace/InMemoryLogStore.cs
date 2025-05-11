@@ -5,9 +5,8 @@ using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using $ext_safeprojectname$.ITrace;
 
-namespace $ext_safeprojectname$.Trace
+namespace $ext_safeprojectname$.ITrace
 {
     /// <summary>
     /// インメモリログストアクラス
@@ -66,42 +65,49 @@ namespace $ext_safeprojectname$.Trace
         /// <summary>
         /// ログ配列に積むログの最低レベル
         /// </summary>
-        private readonly ITrace.LogLevel _minLevel;
+        private readonly LogLevel _minLevel;
         /// <inheritdoc/>
-        public ILogRecord[] LogRecords
+        public LogRecord[] LogRecords
         {
             get
             {
-                LogRecord[] rawData;
+                Span<LogRecord> rawData;
                 int tempTop;
                 lock (_syncObject)
                 {
                     //Loggerなので、複数のスレッドが高速にLogに積んだり、Logの取得を行う可能性がある。
                     //なので、処理中にTop位置やデータ位置が変わる可能性がある。
                     //よってコストはかかるがコピーしてしまう。
-                    rawData = _logRecords.ToArray();
+                    rawData = _logRecords.ToArray().AsSpan();
                     tempTop = _top;
                 }
 
                 //全データがデータを持つ場合は、1週目以降
                 //構造体で配列をした場合は、最初は常に引数なしコンストラクタで初期化される
-                bool isAllHasdata = rawData.All(x => x.HasData);
+                bool isAllHasdata = true;
+                for (int i = 0; i < rawData.Length; i++)
+                {
+                    if (!rawData[i].HasData)
+                    {
+                        isAllHasdata = false;
+                        break;
+                    }
+                }
 
                 if (isAllHasdata)
                 {
                     //Top位置がBufferの最後尾の場合は、整列しているのでそのまま返す。
                     if (tempTop == _capacity - 1)
                     {
-                        return rawData.OfType<ILogRecord>().ToArray();
+                        return rawData.ToArray();
                     }
                     var retData = new LogRecord[_capacity];
                     var refRetData = retData.AsSpan();
-                    var refData = rawData.AsSpan();
                     //先頭からTop位置までは最新データなので、戻り値の後ろに置く
-                    refData.Slice(0, tempTop + 1).CopyTo(refRetData.Slice(_capacity - tempTop - 1));
+                    rawData.Slice(0, tempTop + 1).CopyTo(refRetData.Slice(_capacity - tempTop - 1));
                     //Top位置より後から最後尾までは古めのデータなので、戻りの先頭からおく
-                    refData.Slice(tempTop + 1).CopyTo(refRetData);
-                    return retData.OfType<ILogRecord>().ToArray();
+                    rawData.Slice(tempTop + 1).CopyTo(refRetData);
+                    return retData;
                 }
                 else
                 {
@@ -110,20 +116,15 @@ namespace $ext_safeprojectname$.Trace
                     {
                         //全データにデータがないにも関わらず、なぜかTopが最後尾を指定している場合は、
                         //そもそもまだ、Logが積まれてない状況なので、空を返す。⇔コンストラクト直後
-                        return new ILogRecord[0];
+                        return new LogRecord[0];
                     }
-                    var retData = new ILogRecord[tempTop + 1];
-                    for (int i = 0; i < tempTop + 1; i++)
-                    {
-                        retData[i] = rawData[i] as ILogRecord;
-                    }
-                    return retData;
+                    return rawData.Slice(0, tempTop + 1).ToArray();
                 }
 
             }
         }
         /// <inheritdoc/>
-        public ILogRecord HeadLogRecord => _logRecords[_top];
+        public LogRecord HeadLogRecord => _logRecords[_top];
         /// <summary>
         /// コンストラクタ
         /// </summary>

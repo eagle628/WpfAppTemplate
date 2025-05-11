@@ -16,10 +16,18 @@
   <TemplateContent>
     <Project TargetFileName="WpfAppTemplate.ITrace.csproj" File="WpfAppTemplate.ITrace.csproj" ReplaceParameters="true">
       <ProjectItem ReplaceParameters="true" TargetFileName="IInMemoryLogStore.cs">IInMemoryLogStore.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="ILogRecord.cs">ILogRecord.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="IInternalInMemoryLogStore.cs">IInternalInMemoryLogStore.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="InMemoryLogger.cs">InMemoryLogger.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="InMemoryLoggerExtensions.cs">InMemoryLoggerExtensions.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="InMemoryLoggerProvider.cs">InMemoryLoggerProvider.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="InMemoryLogStore.cs">InMemoryLogStore.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="InMemoryLogStoreConfig.cs">InMemoryLogStoreConfig.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="LogLevel.cs">LogLevel.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="LogRecord.cs">LogRecord.cs</ProjectItem>
       <Folder Name="Properties" TargetFolderName="Properties">
         <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
       </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Utility.cs">Utility.cs</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>

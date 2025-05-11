@@ -1,4 +1,4 @@
-﻿namespace $ext_safeprojectname$.Trace
+﻿namespace $ext_safeprojectname$.ITrace
 {
     /// <summary>
     /// インメモリログストアの内部インターフェース
