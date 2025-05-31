@@ -50,7 +50,7 @@ namespace $safeprojectname$
         {
             _ = services
                     //メインウィンドウとそのViewModelをDIに登録
-                    .AddSingleton(provider => new MainWindow() { DataContext = provider.GetRequiredService<MainWindowViewModel>() })
+                    .AddSingleton<MainWindow>()
                     .AddSingleton<MainWindowViewModel>()
                     //MessageBoxService
                     .AddSingleton<IWarningMessageService, WpfWarningMessageService>()

@@ -64,9 +64,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="View\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -123,16 +120,14 @@
       <Project>{6ae88b13-6bb4-4cfd-aa4f-8da5bc0e18d7}</Project>
       <Name>$ext_safeprojectname$.ViewService</Name>
     </ProjectReference>
+    <ProjectReference Include="..\$ext_safeprojectname$.View\$ext_safeprojectname$.View.csproj">
+      <Project>{49425a94-6320-4c4a-ad6a-1a7ac2f6d6ff}</Project>
+      <Name>$ext_safeprojectname$.View</Name>
+    </ProjectReference>
     <ProjectReference Include="..\$ext_safeprojectname$.WaitService\$ext_safeprojectname$.WaitService.csproj">
       <Project>{af4cfd08-09ab-49ab-9064-e124c3b3fbac}</Project>
       <Name>$ext_safeprojectname$.WaitService</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Include="View\MainWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.Hosting">

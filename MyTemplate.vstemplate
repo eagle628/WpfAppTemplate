@@ -25,6 +25,9 @@
             <ProjectTemplateLink ProjectName="$safeprojectname$.IWaitService" CopyParameters="true">
                 WpfAppTemplate.IWaitService\MyTemplate.vstemplate
             </ProjectTemplateLink>
+            <ProjectTemplateLink ProjectName="$safeprojectname$.View" CopyParameters="true">
+                WpfAppTemplate.View\MyTemplate.vstemplate
+            </ProjectTemplateLink>
             <ProjectTemplateLink ProjectName="$safeprojectname$.ViewModel" CopyParameters="true">
                 WpfAppTemplate.ViewModel\MyTemplate.vstemplate
             </ProjectTemplateLink>
